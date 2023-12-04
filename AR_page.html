@@ -61,7 +61,7 @@
     <!-- A-Frame scene container -->
     <a-scene
         loading-screen="enabled: false"
-        mindar-image="imageTargetSrc: .\Assets\LHtargets.mind; uiLoading:no; uiScanning: #new-scanning-overlay; warmupTolerance: 10; missTolerance: 1; filterMinCF: 0.0001; filterBeta: 0.001"
+        mindar-image="imageTargetSrc: .\Assets\targets.mind; uiLoading:no; uiScanning: #new-scanning-overlay; warmupTolerance: 10; missTolerance: 1; filterMinCF: 0.0001; filterBeta: 0.001"
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
         vr-mode-ui="enabled: false"
@@ -71,7 +71,7 @@
         <!-- Asset container -->
         <a-assets>
             <!-- Video 1 asset for the AR experience -->
-            <video id="video" src=".\Assets\Videos\NGS_TP_V1.mp4" preload="auto" response-type="arraybuffer" loop
+            <video id="video1" src=".\Assets\Videos\NGS_TP_V1.mp4" preload="auto" response-type="arraybuffer" loop
                 crossorigin="anonymous" webkit-playsinline autoplay muted playsinline>
             </video>
           <!-- Video 2 asset for the AR experience -->
@@ -101,22 +101,50 @@
         <a-light type="ambient" color="#FFF"></a-light>
         
         <!-- AR target 1 entity -->
-        <a-entity id="target" mindar-image-target="targetIndex: 0" ar-controller
+        <a-entity id="target1" mindar-image-target="targetIndex: 0" ar-controller
             smooth-position="target: #videooverlay; factor: 0.1">
-            <a-plane id="videooverlay" height="1.6" width="1"
-                material="src: #video; opacity: 0; transparent: false; alphaTest: 0.5"
-                animation__fadein="startEvents: fadein; property: material.opacity; from: 0; to: 1; dur: 500;"
+            <a-plane id="videooverlay" 
+                material="src: #video1; opacity: 0; transparent: false; alphaTest: 0.5"
+                animation__fadein="startEvents: fadein; property: material.opacity; from: 0; to: 1; dur: 500;" height="1.26" width="1"
                 animation__fadeout="startEvents: fadeout; property: material.opacity; from: 1; to: 0; dur: 500;"></a-plane>
         </a-entity>
       
       <!-- AR target 2 entity -->
-        <a-entity id="secondTarget" mindar-image-target="targetIndex: 1" ar-controller
+        <a-entity id="Target2" mindar-image-target="targetIndex: 1" ar-controller
             smooth-position="target: #videooverlay2; factor: 0.1">
-            <a-plane id="videooverlay2" height="1.35" width="1"
+            <a-plane id="videooverlay2" height="1.26" width="1"
                 material="src: #video2; opacity: 0; transparent: false; alphaTest: 0.5"
                 animation__fadein="startEvents: fadein; property: material.opacity; from: 0; to: 1; dur: 500;"
                 animation__fadeout="startEvents: fadeout; property: material.opacity; from: 1; to: 0; dur: 500;"></a-plane>
+          </a-entity>
+          
+          <!-- AR target 3 entity -->
+        <a-entity id="Target3" mindar-image-target="targetIndex: 2" ar-controller
+            smooth-position="target: #videooverlay3; factor: 0.1">
+            <a-plane id="videooverlay3" height="1.26" width="1"
+                material="src: #video3; opacity: 0; transparent: false; alphaTest: 0.5"
+                animation__fadein="startEvents: fadein; property: material.opacity; from: 0; to: 1; dur: 500;"
+                animation__fadeout="startEvents: fadeout; property: material.opacity; from: 1; to: 0; dur: 500;"></a-plane>
         </a-entity>
+          
+          <!-- AR target 4 entity -->
+        <a-entity id="Target4" mindar-image-target="targetIndex: 3" ar-controller
+            smooth-position="target: #videooverlay4; factor: 0.1">
+            <a-plane id="videooverlay4" height="1.26" width="1"
+                material="src: #video4; opacity: 0; transparent: false; alphaTest: 0.5"
+                animation__fadein="startEvents: fadein; property: material.opacity; from: 0; to: 1; dur: 500;"
+                animation__fadeout="startEvents: fadeout; property: material.opacity; from: 1; to: 0; dur: 500;"></a-plane>
+        </a-entity>
+          
+          <!-- AR target 5 entity -->
+        <a-entity id="Target5" mindar-image-target="targetIndex: 4" ar-controller
+            smooth-position="target: #videooverlay5; factor: 0.1">
+            <a-plane id="videooverlay5" height="1.26" width="1"
+                material="src: #video5; opacity: 0; transparent: false; alphaTest: 0.5"
+                animation__fadein="startEvents: fadein; property: material.opacity; from: 0; to: 1; dur: 500;"
+                animation__fadeout="startEvents: fadeout; property: material.opacity; from: 1; to: 0; dur: 500;"></a-plane>
+        </a-entity>
+        
     </a-scene>
   
 <!--     <script>
